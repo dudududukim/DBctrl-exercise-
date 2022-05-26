@@ -1,8 +1,7 @@
 'use strict';
 
-// const logger = require("../../config/logger");
-// const User = require("../../models/User");
-// const UserStorage = require('../../models/UserStorage');
+const visits = require("../../src/models/visits");
+
 
 const output = {
     home: (req, res) => {
@@ -13,8 +12,10 @@ const output = {
 }
 
 const data = {
-    visitors: (req, res)=>{
-
+    visitors: async (req, res)=>{
+        const visit = new visits;
+        const getVisitors = await visit.getVisitors();
+        console.log(getVisitors);
     }
 }
 //     login: (req, res) => {

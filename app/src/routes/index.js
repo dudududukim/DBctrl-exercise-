@@ -6,7 +6,7 @@ const ctrl = require('./home.ctrl.js');
 
 router.get('/', ctrl.output.home);
 
-router.get('api/getVsiitors', ctrl.data.visitors);
+router.get('/api/getVsiitors', ctrl.data.visitors);
 
 // router.get('/login', ctrl.output.login);
 // router.post('/login', ctrl.process.login);
