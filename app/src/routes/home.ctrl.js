@@ -11,6 +11,12 @@ const output = {
         //./view안해도 되는게 app.set에서 views를 ./views로 했기때문에
     },
 }
+
+const data = {
+    visitors: (req, res)=>{
+
+    }
+}
 //     login: (req, res) => {
 //         //localhost:3000/login으로 접속시
 //         res.render('home/login');
@@ -50,5 +56,6 @@ const output = {
 
 module.exports = {
     output,
+    data,
     // process,
 };
