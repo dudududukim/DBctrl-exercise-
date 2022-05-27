@@ -1,16 +1,15 @@
-const { resolveInclude } = require("ejs");
 const db = require("../config/db");
-const query = "SELECT * FROM visitors;"
+
 
 class visits{
     static getVisitors(){
+        const query = "SELECT * FROM visitors;"
         return new Promise((resolve, reject)=>{
-            db.query(query,(err, data)=>{
-                console.log(data);
+            db.query(query,(err, rows, fields)=>{
                 if(err) reject(`${err}`);
-                else resolve(data);
+                else resolve(JSON.stringify(rows));
             });
-        })
+        });
     }
 }
 

@@ -13,47 +13,11 @@ const output = {
 
 const data = {
     visitors: async (req, res)=>{
-        const visit = new visits;
-        const getVisitors = await visit.getVisitors();
-        console.log(getVisitors);
+        const visitorsData = await visits.getVisitors();
+        console.log(`controller : ${visitorsData}`);
+        return res.json(visitorsData);
     }
 }
-//     login: (req, res) => {
-//         //localhost:3000/login으로 접속시
-//         res.render('home/login');
-//     },
-//     register:(req, res) =>{
-//         res.render('home/register');
-//     },
-// }
-
-// const process = {
-//     login: async (req, res) =>{
-//         const user = new User(req.body);
-//         const response = await user.login();
-//         //login이 async이기 때문에 login을 실행시키는 부분에도 async가 있어서
-//         //await의 처리가 양호핟
-//         const url = {
-//             method: "POST",
-//             path: "/login",
-//             status: response.err ? 400 : 200,
-//         };
-//         log(response,url);
-//         return res.status(url.status).json(response);
-        
-//     },
-//     register:async (req, res)=>{
-//         const user = new User(req.body);
-//         const response = await user.register();
-//         const url = {
-//             method: "POST",
-//             path: "/register",
-//             status: response.err ? 500 : 201,
-//         };
-//         log(response, url);
-//         return res.status(url.status).json(response);
-//     },
-// }
 
 module.exports = {
     output,
